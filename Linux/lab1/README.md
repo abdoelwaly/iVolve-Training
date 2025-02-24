@@ -48,4 +48,20 @@ sudo apt install nginx -y
 If configured correctly, Nginx should install without prompting for a password.
 
 
-### or you can run lab.sh
+### or you can run lab Script.
+
+## Steps to Execute the Script
+
+
+### 1. Grant Execute Permissions
+Run the following command to make the script executable:
+```bash
+chmod +x lab.sh
+```
+
+### 2. Execute the Script with Root Privileges
+Run the script using the following command:
+```bash
+sudo ./lab.sh
+```
+
