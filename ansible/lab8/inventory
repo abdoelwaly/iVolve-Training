@@ -1,0 +1,2 @@
+[dbservers]
+ec2-54-242-31-255.compute-1.amazonaws.com ansible_user=ubuntu ansible_private_key_file=/home/ubuntu/ansible/vockey.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
