@@ -1,0 +1,60 @@
+---
+# tasks file for role/cli
+
+- name: Update apt cache
+  apt:
+    update_cache: true
+
+- name: Install OpenJDK 17
+  apt:
+    name: openjdk-17-jdk
+    state: present
+
+
+
+- name: Download Jenkins repository key
+  get_url:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+    dest: /usr/share/keyrings/jenkins-keyring.asc
+    mode: '0644'
+
+- name: Add Jenkins repository
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+    state: present
+    filename: jenkins
+
+- name: Update apt cache after adding repository
+  apt:
+    update_cache: true
+
+- name: Install Jenkins package
+  apt:
+    name: jenkins
+    state: present
+
+- name: Ensure Jenkins service is running and enabled
+  systemd:
+    name: jenkins
+    state: started
+    enabled: true
+
+
+# # tasks file for role/cli
+# - name: installing Jenkins
+#   shell: |
+#     sudo apt update && sudo apt install openjdk-17-jdk -y
+#     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+#     https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+#     echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+#     https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+#     /etc/apt/sources.list.d/jenkins.list > /dev/null 
+#     sudo apt-get update 
+#     sudo apt-get install jenkins -y
+#     sudo systemctl start jenkins
+#     sudo systemctl enable jenkins
+# - name: Ensure keyring directory exists
+#   file:
+#     path: /usr/share/keyrings
+#     state: directory
+#     mode: '0755'

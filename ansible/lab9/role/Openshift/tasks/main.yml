@@ -1,0 +1,30 @@
+- name: Download Openshift CLI  
+  get_url:  
+    url: "https://github.com/openshift/okd/releases/download/4.5.0-0.okd-2020-07-14-153706-ga/openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz"  
+    dest: "/tmp/openshift-client-linux.tar.gz"  
+
+- name: Extract Openshift CLI  
+  unarchive:  
+    src: "/tmp/openshift-client-linux.tar.gz"  
+    dest: "/tmp/"  
+    remote_src: yes  
+
+- name: Move binaries to /usr/local/bin  
+  command: mv /tmp/oc /tmp/kubectl /usr/local/bin/  
+
+- name: Verify Openshift CLI installation  
+  command: oc version  
+  register: oc_version  
+
+- name: Display Openshift version  
+  debug:  
+    msg: "{{ oc_version.stdout }}"
+  
+#only one task is needed to install Openshift 
+# # tasks file for role/Openshift
+# - name: installing Openshift CLI
+#   shell: |
+#      sudo wget https://github.com/openshift/okd/releases/download/4.5.0-0.okd-2020-07-14-153706-ga/openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+#      sudo tar -xvf openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+#      sudo mv oc kubectl /usr/local/bin/
+#      sudo oc version
