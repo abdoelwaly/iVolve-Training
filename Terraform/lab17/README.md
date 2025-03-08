@@ -12,7 +12,7 @@ This lab focuses on implementing infrastructure using Terraform while integratin
 
 ## Architecture Diagram
 Refer to the attached diagram:
-![Architecture Diagram](image.png)
+![Architecture Diagram](https://github.com/abdoelwaly/iVolve-Training/blob/11e52dfc43b477c95fbf29798d9798c1e694efe8/Terraform/lab17/Screenshot%202025-03-08%20155801.png)
 
 ## Infrastructure Components
 ### 1. **VPC & Subnet**
