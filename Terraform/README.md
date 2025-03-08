@@ -10,6 +10,7 @@
 
 ### 1. **VPC & Subnets**
 - A **VPC** (`10.0.0.0/16`) named `ivolveVPC`.
+- ![Import-VPC](https://github.com/abdoelwaly/iVolve-Training/blob/87beffd6a195ecb784af279cb8d28f3ebb296a10/Terraform/lab16/assets/Screenshot%202025-03-05%20123704.png) 
 - **Public Subnet** (`10.0.1.0/24`) in `us-east-1a` with public IP auto-assignment.
 - **Private Subnet-A** (`10.0.2.0/24`) in `us-east-1a` for internal resources.
 - **Private Subnet-B** (`10.0.3.0/24`) in `us-east-1b` for high availability.
@@ -33,7 +34,7 @@ After deployment, you can check the following outputs:
 
 ## Architecture Diagram
 To visualize the architecture, please refer to the linked diagram:
-- [AWS Infrastructure Diagram](#) 
+- ![AWS Infrastructure Diagram](https://github.com/abdoelwaly/iVolve-Training/blob/87beffd6a195ecb784af279cb8d28f3ebb296a10/Terraform/lab16/assets/arch.jpg) 
 
 Additionally, include screenshots of the AWS console showing:
 - VPC and Subnet setup.
@@ -50,7 +51,7 @@ Additionally, include screenshots of the AWS console showing:
    terraform plan
    terraform apply -auto-approve
    ```
-
+![output](https://github.com/abdoelwaly/iVolve-Training/blob/87beffd6a195ecb784af279cb8d28f3ebb296a10/Terraform/lab16/assets/Screenshot%202025-03-05%20134619.png)
 
 4. Retrieve the EC2 instance IP from `ec2-ip.txt` and access the server.
 5. Connect to the RDS database using the endpoint and credentials.
