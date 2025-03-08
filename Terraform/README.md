@@ -10,7 +10,6 @@
 
 ### 1. **VPC & Subnets**
 - A **VPC** (`10.0.0.0/16`) named `ivolveVPC`.
-- ![Import-VPC](https://github.com/abdoelwaly/iVolve-Training/blob/87beffd6a195ecb784af279cb8d28f3ebb296a10/Terraform/lab16/assets/Screenshot%202025-03-05%20123704.png) 
 - **Public Subnet** (`10.0.1.0/24`) in `us-east-1a` with public IP auto-assignment.
 - **Private Subnet-A** (`10.0.2.0/24`) in `us-east-1a` for internal resources.
 - **Private Subnet-B** (`10.0.3.0/24`) in `us-east-1b` for high availability.
@@ -38,6 +37,7 @@ To visualize the architecture, please refer to the linked diagram:
 
 Additionally, include screenshots of the AWS console showing:
 - VPC and Subnet setup.
+![Import-VPC](https://github.com/abdoelwaly/iVolve-Training/blob/87beffd6a195ecb784af279cb8d28f3ebb296a10/Terraform/lab16/assets/Screenshot%202025-03-05%20123704.png)
 - Security Groups configurations.
 - EC2 instance details.
 - RDS instance details.
